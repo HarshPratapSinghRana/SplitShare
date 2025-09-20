@@ -1,0 +1,188 @@
+
+        body {
+            background-color: #f7f7f7;
+        }
+
+        .friend-suggestions img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .app-name {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 12px;
+            color: #8b643b;
+        }
+        .friend-photo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .friend-action-btn {
+            border: none;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .friend-action-btn:hover {
+             background-color: #A9A9A9;
+        }
+
+        .add-friend-btn {
+            background-color: #a88e5b;
+            color: white;
+        }
+
+        .add-friend-btn:hover {
+            background-color: #8b643b; /* Darker green on hover */
+        }
+
+        .withdraw-friend-btn {
+            background-color: #D3D3D3; /* Red for Withdraw */
+            color: white;
+        }
+
+        .withdraw-friend-btn:hover {
+            background-color: #A9A9A9;
+        }
+
+        .search-results {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .account-banner {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .account-banner:hover {
+            background-color: #f0f0f0;
+        }
+
+        .profile-photo-search {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .account-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .profile-id {
+            font-size: 12px;
+            color: gray;
+            margin: 0;
+        }
+
+        #create-post-section {
+            padding: 10px 20px; /* Adjust the padding for width and height */
+            background-color: #a88e5b;
+            color: white; /* Text color */
+            border: none; /* Remove default border */
+            border-radius: 30px; /* Rounded edges, making it oval */
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #create-post-section:hover {
+            background-color: #8b643b; /* Darker color on hover */
+        }
+
+        #postContent img {
+          max-width: 100%;
+          border-radius: 8px;
+          margin-top: 10px;
+        }
+
+        #transactionsList .transaction-item {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          margin-bottom: 5px;
+          cursor: pointer;
+        }
+
+        #transactionsList .transaction-item:hover {
+          background-color: #f0f0f0;
+        }
+
+        #transactionsList .transaction-item.selected {
+          background-color: #007bff;
+          color: white;
+        }
+
+        .fixed-top {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1050; /* Ensure it stays above other elements */
+            width: 50%;
+            text-align: center;
+            padding: 10px 15px; /* Smaller padding for a compact look */
+            font-size: 14px; /* Adjust font size for better appearance */
+            border-radius: 8px; /* Rounded corners for a modern look */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for emphasis */
+        }
+
+
+
+
+
+            .post {
+                width: 100%;
+                max-width: 600px;
+                margin-bottom: 2rem;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                overflow: hidden;
+                background: white;
+            }
+
+            .post img {
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .post .content {
+                padding: 1rem;
+            }
+
+            .comments, .replies {
+                margin-top: 1rem;
+                padding-left: 1rem;
+                border-left: 2px solid #ddd;
+            }
+
+
+
+
+
+

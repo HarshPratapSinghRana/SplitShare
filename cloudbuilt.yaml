@@ -1,0 +1,36 @@
+steps:
+  # Step 1: Build the Docker image with the commit SHA
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/my-app:$SHORT_SHA', '.']
+
+  # Step 2: Push the image to Google Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/my-app:$SHORT_SHA']
+
+  # Step 3: Tag the image as 'latest' (optional but recommended)
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['tag', 'gcr.io/$PROJECT_ID/my-app:$SHORT_SHA', 'gcr.io/$PROJECT_ID/my-app:latest']
+
+  # Step 4: Push the 'latest' tag
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/my-app:latest']
+
+  # Step 5: Deploy to Cloud Run (using 'latest' tag for smooth rollbacks)
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ssapp
+      - --image=gcr.io/$PROJECT_ID/my-app:latest
+      - --region=asia-south2
+      - --platform=managed
+      - --allow-unauthenticated
+      - --quiet  # Avoid interactive prompts
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+images:
+  - 'gcr.io/$PROJECT_ID/my-app:$SHORT_SHA'
+  - 'gcr.io/$PROJECT_ID/my-app:latest'
